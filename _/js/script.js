@@ -675,6 +675,7 @@ jQuery(document).ready(function ($) {
 
   function cbBotControl () {
 		setConfigurationContainerHeight();
+    $("#logIFrame").attr('src','/x/log');
   }
   $('body').on('click', '.bot-on', function () {
 		$.post( '/x/on')
@@ -697,7 +698,7 @@ jQuery(document).ready(function ($) {
   $('body').on('click', '.bot-clear', function () {
     $.post( '/x/clear')
     .done(function(data) {
-      $("#logIFrame").attr('src',$("#logIFrame").attr('src'));
+      $("#logIFrame").attr('src','/x/log');
       console.log("clear");
     })
     .fail(function() {

@@ -168,7 +168,7 @@
                             <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i> 清除記錄</button>
 						</div>
 	          <div class="bot-container editor-container col-12" style="">
-	          	<iframe id="logIFrame" src="/x/log" width="100%" height="100%"></iframe>
+	          	<iframe id="logIFrame" src="" width="100%" height="100%"></iframe>
 	          </div>
           </div>
         </div>
