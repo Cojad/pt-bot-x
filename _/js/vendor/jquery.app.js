@@ -35,16 +35,16 @@
         // hide any open menus and remove all other classes
         //$("ul", $element.parents("ul:first")).slideUp(350);
         $("a", $element.parents("ul:first")).removeClass("subdrop");
-        //$("#sidebar-menu .pull-right i").removeClass("md-remove").addClass("md-add");
+        $("#sidebar-menu .pull-right i").removeClass("md-remove").addClass("md-add");
 
         // open our new menu and add the open class
-        //$element.next("ul").show();
+        $element.next("ul").show();
         $element.addClass("subdrop");
-        //$(".pull-right i", $element.parents(".has_sub:last")).removeClass("md-add").addClass("md-remove");
-        //$(".pull-right i", $element.siblings("ul")).removeClass("md-remove").addClass("md-add");
+        $(".pull-right i", $element.parents(".has_sub:last")).removeClass("md-add").addClass("md-remove");
+        $(".pull-right i", $element.siblings("ul")).removeClass("md-remove").addClass("md-add");
       } else {
         if ($element.parent().hasClass('has_sub')) {
-          $element.removeClass('subdrop').next('ul').hide();
+          //$element.removeClass('subdrop').next('ul').hide();
         }
       }
 
