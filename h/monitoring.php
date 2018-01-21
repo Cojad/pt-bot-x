@@ -24,18 +24,18 @@ $s=[];
 $r=[];
 $s[]='<li id="defaultPage">';
 $r[]='<li class="has_sub" id="configBot" style="display: list-item;">
-                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-wrench"></i><span>PT Bot管理</span>
+                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-cog"></i><span>PT Bot管理</span>
                           <span class="menu-arrow"></span></a>
                           <ul class="list-unstyled" style="display: none;">
-                            <li><a href="bot?file=onoff">開關機</a></li>
-                            <li><a href="config?file=application.properties">設定</a></li>
+                            <li><a href="bot?file=onoff"><i class="fa fa-plug"></i>開關機</a></li>
+                            <li><a href="config?file=application.properties"><i class="fa fa-microchip" aria-hidden="true"></i>程式設定</a></li>
                           </ul>
                         </li>' .
 '                        <li id="defaultPage">';
 $s[]='<i class="fa fa-wrench"></i><span> Config</span>';
-$r[]='<i class="fa fa-wrench"></i><span>設定檔</span>';
+$r[]='<i class="fa fa-wrench"></i><span>設定</span>';
 $s[]='<li><a href="config?file=configuration.properties">Configuration</a></li>';
-$r[]='<li><a href="config?file=configuration.properties">基本設定</a></li>';
+$r[]='<li><a href="config?file=application.properties">程式設定</a></li><li><a href="config?file=configuration.properties">基本設定</a></li>';
 $s[]='</i><span> Monitoring </span>';
 $r[]='</i><span>主控台</span>';
 $s[]='><i class="fa fa-optin-monster"></i><span> Possible Buy Log </span>';

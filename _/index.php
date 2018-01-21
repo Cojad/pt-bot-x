@@ -102,9 +102,9 @@
                 <!--- Divider -->
                 <div id="sidebar-menu">
                     <ul>
-                        <li id="defaultPage"><a href="bot?file=onoff" class="waves-effect waves-primary config"><i class="fa fa-power-off"></i><span>開關機</span></a></li>
+                        <li id="defaultPage"><a href="bot?file=onoff" class="waves-effect waves-primary config"><i class="fa fa-plug"></i><span>開關機</span></a></li>
                         <li class="has_sub" id="configBot" style="display: list-item;">
-                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-wrench"></i><span>設定檔</span>
+                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-cog"></i><span>設定檔</span>
                           <span class="menu-arrow"></span></a>
                           <ul class="list-unstyled" style="display: none;">
                             <li><a href="config?file=application.properties">程式設定</a></li>
