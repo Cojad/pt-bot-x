@@ -1,7 +1,0 @@
-.git
-.DS_Store
-.password
-exclude.txt
-Thumbs.db
-LICENSE
-README.md
