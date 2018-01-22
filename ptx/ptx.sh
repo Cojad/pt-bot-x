@@ -25,4 +25,4 @@ echo "remove temp files"
 rm -Rf pt-bot-x-$ptx_ver
 echo "create config.php with PT Bot Url to $1"
 echo -e "<?php \$url=\"$1\";?>" >> config.php;
-echo "All done! you can now use PT Bot X by Cojad"
+echo "All done! you can now use PT Bot X by Cojad\n"
