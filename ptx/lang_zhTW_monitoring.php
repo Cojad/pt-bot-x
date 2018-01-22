@@ -1,41 +1,15 @@
 <?php
-$_p1=$_SERVER['HTTP_HOST'];  //pt0.ass.tw
-$_p2=explode(".", $_p1)[0];  //pt0
-$_p3=intval(substr($_p2,2)); //0
-$_p4=$_p3+8080;              //8080+0
-
-$ch=curl_init();
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_URL, "http://127.0.0.1:$_p4/monitoring");
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-curl_setopt($ch, CURLOPT_COOKIE, http_build_query($_COOKIE, null, '; '));
-curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER["HTTP_USER_AGENT"]);
-
-$raw=curl_exec($ch);
-$redirectURL = curl_getinfo($ch,CURLINFO_EFFECTIVE_URL );
-if(stripos($redirectURL,"/login")!==false){
-  header("location: /login");
-};
-if(empty($raw)){
-  header("location: /_/");
-  die();
-}
-$s=[];
-$r=[];
-$s[]='<li id="defaultPage">';
-$r[]='<li class="has_sub" id="configBot" style="display: list-item;">
-                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-cog"></i><span>PT Bot管理</span>
-                          <span class="menu-arrow"></span></a>
-                          <ul class="list-unstyled" style="display: none;">
-                            <li><a href="bot?file=onoff"><i class="fa fa-plug"></i>開關機</a></li>
-                            <li><a href="config?file=application.properties"><i class="fa fa-microchip" aria-hidden="true"></i>程式設定</a></li>
-                          </ul>
-                        </li>' .
-'                        <li id="defaultPage">';
+/*
+ * /monitoring 語系檔案
+ *
+*/
+function lang_monitoring($in){
 $s[]='<i class="fa fa-wrench"></i><span> Config</span>';
 $r[]='<i class="fa fa-wrench"></i><span>設定</span>';
 $s[]='<li><a href="config?file=configuration.properties">Configuration</a></li>';
-$r[]='<li><a href="config?file=application.properties">程式設定</a></li><li><a href="config?file=configuration.properties">基本設定</a></li>';
+$r[]='<li><a href="config?file=configuration.properties">基本設定</a></li>';
+$s[]='<li><a href="config?file=application.properties">Application Setting</a></li>';
+$r[]='<li><a href="config?file=application.properties">程式設定</a></li>';
 $s[]='</i><span> Monitoring </span>';
 $r[]='</i><span>主控台</span>';
 $s[]='><i class="fa fa-optin-monster"></i><span> Possible Buy Log </span>';
@@ -182,7 +156,5 @@ $r[]='<!-- BOT -->
         </div>
         <!-- end BOT -->
         <!-- SETTINGS -->';
-
-echo str_replace($s,$r,$raw);
-
-?>
+return str_replace($s,$r,$in);
+}
