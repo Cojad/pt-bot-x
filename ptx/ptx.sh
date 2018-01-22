@@ -1,6 +1,6 @@
 #!/bin/bash
 pt_ver=1.2.6.11
-ptx_ver=2.2
+ptx_ver=2.3
 echo "Donload ProfitTrailer v1.2.6.11 from github!"
 wget https://github.com/taniman/profit-trailer/releases/download/v$pt_ver/ProfitTrailer.zip -O ProfitTrailer.zip
 mkdir tmp
@@ -23,6 +23,4 @@ echo "Move file to current dir"
 cp -R pt-bot-x-$ptx_ver/* .
 echo "remove temp files"
 rm -Rf pt-bot-x-$ptx_ver
-echo "create config.php with PT Bot Url to $1"
-echo -e "<?php \$url=\"$1\";?>" >> config.php;
-echo "All done! you can now use PT Bot X by Cojad\n"
+echo "All done! Edit config.php to match your vps settings\n"

@@ -7,7 +7,6 @@ $lang = $_COOKIE["lang"] ?? $lang ?? "en";
 if(in_array($lang,["zhTW","en"]) == false){
 	$lang = "en";
 }
-$path_pt="/home/pt0/pt";
 
 if(strpos($uri,"/x/")!== false){ // 所有 /x/xxx 的擴充功能
   x_function($uri);
@@ -149,8 +148,9 @@ function saveConfig() {
 	}
 }
 function showLog() {
+	global $path_pt_log;
 	require 'ptx/PHPTail.php';
-	$tail = new PHPTail(["Log" => "/home/pt0/files/pt.log"],3000);
+	$tail = new PHPTail(["Log" => $path_pt_log],3000);
 	if(isset($_GET['ajax'])) {
     die($tail->getNewLines($_GET['file'], $_GET['lastsize'], $_GET['grep'], $_GET['invert']));
 	}
