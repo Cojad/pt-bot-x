@@ -15,6 +15,14 @@ touch css/xcustom.css
 rm js/script.js
 echo "remove temp files"
 rm -Rf tmp ProfitTrailer.jar
+echo "Download PT Bot X from github"
+wget https://github.com/Cojad/pt-bot-x/archive/v2.0.zip -O pt-box-x.zip
+echo "Unzip pt-box-x.zip"
+unzip pt-box-x.zip
+echo "Move file to current dir"
+cp -R pt-bot-x-2.0/* .
+echo "remove temp files"
+rm -Rf pt-bot-x-2.0
 echo "create config.php with PT Bot Url to $1"
-echo -e "<?php \$url=\"$1\";?>\n" >> config.php;
+echo -e "<?php \$url=\"$1\";?>" >> config.php;
 echo "All done! you can now use PT Bot X by Cojad"
