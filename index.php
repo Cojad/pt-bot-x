@@ -36,7 +36,11 @@ if(strpos($uri,"/x/")!== false){ // 所有 /x/xxx 的擴充功能
 		preg_match('@/js/script.js[^/]*$@i', $uri, $matches);
 		if(count($matches)){
 			include("ptx/ptx.php");
-			$body=ptx_script($body);
+			$body = ptx_script($body);
+			if(is_file("ptx/lang_{$lang}_script.php")){
+				include("ptx/lang_{$lang}_script.php");
+				$body = lang_script($body);
+			}
 		}
 	  echo $body;
 	} else if($httpCode == 0) {
@@ -51,7 +55,12 @@ if(strpos($uri,"/x/")!== false){ // 所有 /x/xxx 的擴充功能
 				echo $body;
   		} else if(strpos($uri,"/js/script.js")!== false){
   			include("ptx/ptx.php");
-  			echo ptx_script(file_get_contents("js/scriptX.js"));
+  			$body = ptx_script(file_get_contents("js/scriptX.js"));
+				if(is_file("ptx/lang_{$lang}_script.php")){
+					include("ptx/lang_{$lang}_script.php");
+					$body = lang_script($body);
+				}
+				echo $body;
   		} else if(strpos($uri,"/login")!== false) {
   			if(empty($_POST["password"])){
 					$body=file_get_contents("templates/login.ftl");

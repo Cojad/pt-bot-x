@@ -15,6 +15,18 @@ $r[]='<li class="has_sub" id="configBot" style="display: list-item;">
 $s[]='<li><a href="config?file=configuration.properties">Configuration</a></li>';
 $r[]='<li><a href="config?file=application.properties">' . MENU_SUB_APPLICATION . '</a></li>
                             <li><a href="config?file=configuration.properties">Configuration</a></li>';
+$s[]='<li><a href="config?file=trading/hotconfig">HotConfig</a></li>';
+$r[]='<li><a href="config?file=trading/hotconfig">HotConfig</a></li>
+                          </ul>
+                        </li>
+                        <li class="has_sub" id="configSOM" style="display:none;">
+                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-cog"></i><span>' . MENU_SOM . '</span>
+                          <span class="menu-arrow"></span></a>
+                          <ul class="list-unstyled" style="display: none;">
+                            <li><a href="/settings/sellOnlyMode?type=&enabled=true"> Sell Only Mode On</a></li>
+                            <li><a href="settings/sellOnlyMode?type=&enabled=false"> Sell Only Mode Off</a></li>
+                            <li><a href="settings/overrideSellOnlyMode?enabled=false"> Override SOM</a></li>
+                            <li><a href="/settings/overrideSellOnlyMode"> Reset SOM</a></li>';
 $s[]='<!-- end SETTINGS -->';
 $r[]='<!-- end SETTINGS -->
         <!-- BOT -->
@@ -32,10 +44,13 @@ $r[]='<!-- end SETTINGS -->
         </div>
         <!-- end BOT -->
 ';
+
 return str_replace($s,$r,$in);
 }
 
 function ptx_script($in){ // /js/script.js 強化
+$s[]="page('Monitoring');";
+$r[]="page('monitoring');";
 $s[]="    'config': {";
 $r[]="    'bot': {
       template: 'tmplBot',
@@ -45,7 +60,25 @@ $r[]="    'bot': {
     },
     'config': {";
 $s[]="  function cbLoadConfig () {";
-$r[]="  function cbBotControl () {
+$r[]="  function showMainMenu () {
+    // If Server is online
+    console.log('show');
+    \$configurationMenu.show();
+    $('#configSOM').show();
+    $('#sidebar-menu > ul >li').each(function(){if(this.id=='')
+        $(this).show();
+    });
+  }
+  function hideMainMenu () {
+    console.log('hide');
+    // If Server is offline
+    \$configurationMenu.show();
+    $('#configSOM').hide();
+    $('#sidebar-menu > ul >li').each(function(){if(this.id=='')
+      $(this).hide();
+    });
+  }
+  function cbBotControl () {
 		setConfigurationContainerHeight();
     $('#logIFrame').attr('src','/x/log');
   }
@@ -77,6 +110,21 @@ $r[]="  function cbBotControl () {
     })
   });
   function cbLoadConfig () {";
+$s[]="const \$configurationMenu = $('#configMenu');";
+$r[]="const \$configurationMenu = $('#configMenu,#configSOM');";
+$s[]="showOrHideConfigurationMenu(data);";
+$r[]="//showOrHideConfigurationMenu(data);";
+$s[]="if (responseData.processStatus === false) {";
+$r[]="if (responseData.processStatus !== false) {
+          showMainMenu();
+        } else {
+          hideMainMenu();";
+$s[]="}).fail(function () {";
+$r[]="}).fail(function () {
+        hideMainMenu();";
+$s[]="}).always(function () {";
+$r[]="}).always(function () {
+        console.log('A',serverData);";
 return str_replace($s,$r,$in);
 }
 ?>
