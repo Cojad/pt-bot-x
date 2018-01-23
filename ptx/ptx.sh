@@ -1,6 +1,6 @@
 #!/bin/bash
 pt_ver=1.2.6.11
-ptx_ver=2.3
+ptx_ver=2.4
 echo "Donload ProfitTrailer v1.2.6.11 from github!"
 wget https://github.com/taniman/profit-trailer/releases/download/v$pt_ver/ProfitTrailer.zip -O ProfitTrailer.zip
 mkdir tmp
@@ -12,7 +12,7 @@ echo "move files to current folder"
 cp -ruv tmp/BOOT-INF/classes/static/* .
 cp -ruv tmp/BOOT-INF/classes/templates  templates
 touch css/xcustom.css
-rm js/script.js
+mv js/script.js js/scriptX.js
 echo "remove temp files"
 rm -Rf tmp ProfitTrailer.jar
 echo "Download PT Bot X from github"
