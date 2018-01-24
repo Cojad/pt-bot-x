@@ -1,7 +1,7 @@
 #!/bin/bash
 pt_ver=1.2.6.12
-ptx_ver=2.5
-echo "Donload ProfitTrailer v$pt_ver from github!"
+ptx_ver=2.6
+echo "Download ProfitTrailer v$pt_ver from github!"
 wget https://github.com/taniman/profit-trailer/releases/download/v$pt_ver/ProfitTrailer.zip -O ProfitTrailer.zip
 mkdir tmp
 echo "Unzip ProfitTrailer.jar from ProfitTrailer.zip"
@@ -10,7 +10,7 @@ echo "Unzip static files from ProfitTrailer.jar"
 unzip -q ProfitTrailer.jar -d tmp/
 echo "move files to current folder"
 cp -ruv tmp/BOOT-INF/classes/static/* .
-cp -ruv tmp/BOOT-INF/classes/templates  templates
+cp -ruv tmp/BOOT-INF/classes/templates .
 touch css/xcustom.css
 mv js/script.js js/scriptX.js
 echo "remove temp files"
