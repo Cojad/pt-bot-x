@@ -1,7 +1,7 @@
 #!/bin/bash
-pt_ver=1.2.6.11
+pt_ver=1.2.6.12
 ptx_ver=2.5
-echo "Donload ProfitTrailer v1.2.6.11 from github!"
+echo "Donload ProfitTrailer v$pt_ver from github!"
 wget https://github.com/taniman/profit-trailer/releases/download/v$pt_ver/ProfitTrailer.zip -O ProfitTrailer.zip
 mkdir tmp
 echo "Unzip ProfitTrailer.jar from ProfitTrailer.zip"

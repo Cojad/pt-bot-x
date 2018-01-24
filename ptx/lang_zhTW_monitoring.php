@@ -4,26 +4,26 @@
  *
 */
 function lang_monitoring($in){
-$s[]='<i class="fa fa-wrench"></i><span> Config</span>';
-$r[]='<i class="fa fa-wrench"></i><span>設定</span>';
-$s[]='<li><a href="config?file=configuration.properties">Configuration</a></li>';
-$r[]='<li><a href="config?file=configuration.properties">基本設定</a></li>';
-$s[]='<li><a href="config?file=application.properties">Application Setting</a></li>';
-$r[]='<li><a href="config?file=application.properties">程式設定</a></li>';
-$s[]='</i><span> Monitoring </span>';
-$r[]='</i><span>主控台</span>';
-$s[]='><i class="fa fa-optin-monster"></i><span> Possible Buy Log </span>';
-$r[]='title="Possible Buy Log"><i class="fa fa-optin-monster"></i><span>潛在購買紀錄</span>';
-$s[]='><i class="fa fa-houzz"></i><span> Pairs Log </span>';
-$r[]='title="Pairs Log"><i class="fa fa-houzz"></i><span>下單記錄</span>';
-$s[]='><i class="fa fa-hand-peace-o"></i><span> DCA Log </span>';
-$r[]='title="DCA Log"><i class="fa fa-hand-peace-o"></i><span>往下攤平記錄</span>';
-$s[]='><i class="fa fa-gg"></i><span> Pending Log </span>';
-$r[]='title="Pending Log"><i class="fa fa-gg"></i><span>待賣出記錄</span>';
-$s[]='><i class="fa fa-balance-scale"></i><span> Sales Log </span>';
-$r[]='title="Sales Log"><i class="fa fa-balance-scale"></i><span>賣出記錄</span>';
-$s[]='><i class="fa fa-recycle"></i><span> Dust Log </span>';
-$r[]='title="Dust Log"><i class="fa fa-recycle"></i><span>塵埃記錄(Dust)</span>';
+$s[]='<span> Config</span>';
+$r[]='<span> 設定</span>';
+$s[]='<a href="config?file=configuration.properties">Configuration</a>';
+$r[]='<a href="config?file=configuration.properties">基本設定</a>';
+$s[]='<a href="config?file=application.properties">Application Setting</a>';
+$r[]='<a href="config?file=application.properties">程式設定</a>';
+$s[]='<span> Monitoring </span>';
+$r[]='<span>主控台</span>';
+$s[]='<span> Possible Buy Log </span>';
+$r[]='<span>潛在購買紀錄</span>';
+$s[]='<span> Pairs Log </span>';
+$r[]='<span>下單記錄</span>';
+$s[]='<span> DCA Log </span>';
+$r[]='<span>往下攤平記錄</span>';
+$s[]='<span> Pending Log </span>';
+$r[]='<span>待賣出記錄</span>';
+$s[]='<span> Sales Log </span>';
+$r[]='<span>賣出記錄</span>';
+$s[]='<span> Dust Log </span>';
+$r[]='<span>塵埃記錄(Dust)</span>';
 $s[]='title="Balance">BAL</label>';
 $r[]='title="Balance">餘額</label>';
 $s[]='title="Total Current Value">TCV</label>';

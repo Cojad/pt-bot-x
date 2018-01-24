@@ -12,37 +12,40 @@ $r[]='<li class="has_sub" id="configBot" style="display: list-item;">
                           </ul>
                         </li>' .
 '                        <li id="defaultPage">';
-$s[]='<li><a href="config?file=configuration.properties">Configuration</a></li>';
-$r[]='<li><a href="config?file=application.properties">' . MENU_SUB_APPLICATION . '</a></li>
-                            <li><a href="config?file=configuration.properties">Configuration</a></li>';
-$s[]='<li><a href="config?file=trading/hotconfig">HotConfig</a></li>';
-$r[]='<li><a href="config?file=trading/hotconfig">HotConfig</a></li>
-                          </ul>
-                        </li>
-                        <li class="has_sub" id="configSOM" style="display:none;">
-                          <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-cog"></i><span>' . MENU_SOM . '</span>
-                          <span class="menu-arrow"></span></a>
-                          <ul class="list-unstyled" style="display: none;">
-                            <li><a href="/settings/sellOnlyMode?type=&enabled=true"> Sell Only Mode On</a></li>
-                            <li><a href="settings/sellOnlyMode?type=&enabled=false"> Sell Only Mode Off</a></li>
-                            <li><a href="settings/overrideSellOnlyMode?enabled=false"> Override SOM</a></li>
-                            <li><a href="/settings/overrideSellOnlyMode"> Reset SOM</a></li>';
+$s[]='<a href="config?file=configuration.properties">Configuration</a>';
+$r[]='<a href="config?file=application.properties">' . MENU_SUB_APPLICATION . '</a>
+                </li>
+                <li>
+                  <a href="config?file=configuration.properties">Configuration</a>';
+$s[]='<a href="config?file=trading/hotconfig">HotConfig</a>';
+$r[]='<a href="config?file=trading/hotconfig">HotConfig</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has_sub" id="configSOM" style="display:none;">
+              <a href="javascript:void(0);" class="waves-effect waves-primary config"><i class="fa fa-cog"></i><span>' . MENU_SOM . '</span>
+              <span class="menu-arrow"></span></a>
+              <ul class="list-unstyled" style="display: none;">
+                <li><a href="/settings/sellOnlyMode?type=&enabled=true"> Sell Only Mode On</a></li>
+                <li><a href="settings/sellOnlyMode?type=&enabled=false"> Sell Only Mode Off</a></li>
+                <li><a href="settings/overrideSellOnlyMode?enabled=false"> Override SOM</a></li>
+                <li><a href="/settings/overrideSellOnlyMode"> Reset SOM</a></li>';
 $s[]='<!-- end SETTINGS -->';
 $r[]='<!-- end SETTINGS -->
-        <!-- BOT -->
-        <div id="tmplBot" class="hide">
-          <div id="configurationContainer" class="row">
-            <div class="col-12 configuration-heading-container">
-              <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-primary btn-sm bot-on"><i class="fa fa-rocket" aria-hidden="true"></i>' . BUT_BOT_ON . '</button>&nbsp;&nbsp;&nbsp;
-              <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-danger btn-sm bot-off"><i class="fa fa-power-off" aria-hidden="true"></i>' . BUT_BOT_OFF . '</button>&nbsp;&nbsp;&nbsp;
-              <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i>' . BUT_BOT_CLEAR_LOG . '</button>
-            </div>
-            <div class="bot-container editor-container col-12" style="">
-              <iframe id="logIFrame" src="" width="100%" height="100%"></iframe>
-            </div>
-          </div>
+    <!-- BOT -->
+    <div id="tmplBot" class="hide">
+      <div id="configurationContainer" class="row">
+        <div class="col-12 configuration-heading-container">
+          <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-primary btn-sm bot-on"><i class="fa fa-rocket" aria-hidden="true"></i>' . BUT_BOT_ON . '</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-danger btn-sm bot-off"><i class="fa fa-power-off" aria-hidden="true"></i>' . BUT_BOT_OFF . '</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i>' . BUT_BOT_CLEAR_LOG . '</button>
         </div>
-        <!-- end BOT -->
+        <div class="bot-container editor-container col-12" style="">
+          <iframe id="logIFrame" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- end BOT -->
 ';
 
 return str_replace($s,$r,$in);

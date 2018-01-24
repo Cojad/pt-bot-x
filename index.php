@@ -48,7 +48,7 @@ if(strpos($uri,"/x/")!== false){ // 所有 /x/xxx 的擴充功能
 			if(in_array($uri,["/monitoring"])){
 				include("ptx/ptx.php");
 				$body=ptx_monitor(file_get_contents("templates/index.ftl"));
-				if(is_file("ptx.log/lang_{$lang}_monitoring.php")){
+				if(is_file("ptx/lang_{$lang}_monitoring.php")){
 					include("ptx/lang_{$lang}_monitoring.php");
 					$body=lang_monitoring($body);
 				}
