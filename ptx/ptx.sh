@@ -20,7 +20,7 @@ wget https://github.com/Cojad/pt-bot-x/archive/v$ptx_ver.zip -O pt-box-x.zip
 echo "Unzip pt-box-x.zip"
 unzip pt-box-x.zip
 echo "Move file to current dir"
-cp -R pt-bot-x-$ptx_ver/* .
+cp -ur pt-bot-x-$ptx_ver/* .
 echo "remove temp files"
 rm -Rf pt-bot-x-$ptx_ver
 echo "All done! Edit config.php to match your vps settings\n"
