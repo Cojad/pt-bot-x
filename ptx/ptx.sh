@@ -5,7 +5,8 @@ echo "Download ProfitTrailer v$pt_ver from github!"
 wget https://github.com/taniman/profit-trailer/releases/download/v$pt_ver/ProfitTrailer.zip -O ProfitTrailer.zip
 mkdir tmp
 echo "Unzip ProfitTrailer.jar from ProfitTrailer.zip"
-unzip -qoj ProfitTrailer.zip ProfitTrailer/ProfitTrailer.jar
+unzip -qo ProfitTrailer.zip -d tmp/
+mv tmp/ProfitTrailer/ProfitTrailer.jar .
 echo "Unzip static files from ProfitTrailer.jar"
 unzip -q ProfitTrailer.jar -d tmp/
 echo "move files to current folder"
