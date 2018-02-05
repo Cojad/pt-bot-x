@@ -1,6 +1,6 @@
 #!/bin/bash
-pt_ver=1.2.6.12
-ptx_ver=2.6
+pt_ver=1.2.6.15
+ptx_ver=2.7
 echo "Download ProfitTrailer v$pt_ver from github!"
 wget https://github.com/taniman/profit-trailer/releases/download/v$pt_ver/ProfitTrailer.zip -O ProfitTrailer.zip
 mkdir tmp

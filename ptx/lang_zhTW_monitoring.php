@@ -147,7 +147,8 @@ $r[]='<!-- BOT -->
             <div class="col-12 configuration-heading-container">
               <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-primary btn-sm bot-on"><i class="fa fa-rocket" aria-hidden="true"></i> 啟動</button>&nbsp;&nbsp;&nbsp;
               <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-danger btn-sm bot-off"><i class="fa fa-power-off" aria-hidden="true"></i> 停止</button>&nbsp;&nbsp;&nbsp;
-              <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i> 清除記錄</button>
+              <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i> 清除記錄</button>&nbsp;&nbsp;&nbsp;
+              <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-primary btn-sm bot-test"><i class="fa fa-comment-alt" aria-hidden="true"></i> 測試 Telegram</button>
             </div>
             <div class="bot-container editor-container col-12" style="">
               <iframe id="logIFrame" src="" width="100%" height="100%"></iframe>

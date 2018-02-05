@@ -13,4 +13,6 @@
   define("BUT_BOT_OFF"," 停止");
 //define("BUT_BOT_CLEAR_LOG"," Clear log");
   define("BUT_BOT_CLEAR_LOG"," 清除記錄");
+//define("BUT_BOT_TEST_TG"," Test Telegram");
+  define("BUT_BOT_TEST_TG"," 測試 Telegram");
 ?>

@@ -19,7 +19,7 @@ if(strpos($uri,"/x/")!== false){ // 所有 /x/xxx 的擴充功能
 	header("Location: /monitoring");
 } else if(strpos($uri,"/settings/load?")!== false){
   loadConfig();
-} else if(strpos($uri,"/settings/save?")!== false){
+} else if(strpos($uri,"/settings/save?")!== false && strpos($uri,"/settings/save?fileName=trading/hotconfig") === false ){
   saveConfig();
 } else{
 	proxy("$url$uri");
@@ -118,6 +118,7 @@ function define_default(){
   define("BUT_BOT_ON"," Start");
   define("BUT_BOT_OFF"," Stop");
   define("BUT_BOT_CLEAR_LOG"," Clear log");
+  define("BUT_BOT_TEST_TG"," Test Telegram");
 }
 function proxy($curl_url){
 	global $body,$httpCode,$location;

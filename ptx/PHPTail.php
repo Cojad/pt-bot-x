@@ -109,6 +109,9 @@ class PHPTail {
 #grepKeyword, #settings {
     font-size: 80%;
 }
+body {
+    background-color:#333;
+}
 .float {
     background: white;
     border-bottom: 1px solid black;
@@ -119,10 +122,13 @@ class PHPTail {
     text-align: left;
 }
 .contents {
-    margin-top: 30px;
+    margin-top: 0px;
+    padding: 2px 2px;
+    color:white;
+    background-color:#333;
 }
 .results {
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     font-family: monospace;
     font-size: small;
     white-space: pre;

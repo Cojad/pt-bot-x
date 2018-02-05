@@ -13,4 +13,6 @@
   define("BUT_BOT_OFF"," Stop");
 //define("BUT_BOT_CLEAR_LOG"," Clear log");
   define("BUT_BOT_CLEAR_LOG"," Clear log");
+//define("BUT_BOT_TEST_TG"," Test Telegram");
+  define("BUT_BOT_TEST_TG"," Test Telegram");
 ?>

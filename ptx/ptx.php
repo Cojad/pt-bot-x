@@ -38,7 +38,8 @@ $r[]='<!-- end SETTINGS -->
         <div class="col-12 configuration-heading-container">
           <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-primary btn-sm bot-on"><i class="fa fa-rocket" aria-hidden="true"></i>' . BUT_BOT_ON . '</button>&nbsp;&nbsp;&nbsp;
           <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-danger btn-sm bot-off"><i class="fa fa-power-off" aria-hidden="true"></i>' . BUT_BOT_OFF . '</button>&nbsp;&nbsp;&nbsp;
-          <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i>' . BUT_BOT_CLEAR_LOG . '</button>
+          <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-warning btn-sm bot-clear"><i class="fa fa-times" aria-hidden="true"></i>' . BUT_BOT_CLEAR_LOG . '</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" style="cursor: pointer;color: #ffffff;" class="btn btn-primary btn-sm bot-test"><i class="fa fa-comment-alt" aria-hidden="true"></i>' . BUT_BOT_TEST_TG . '</button>
         </div>
         <div class="bot-container editor-container col-12" style="">
           <iframe id="logIFrame" src="" width="100%" height="100%"></iframe>
@@ -65,7 +66,7 @@ $r[]="    'bot': {
 $s[]="  function cbLoadConfig () {";
 $r[]="  function showMainMenu () {
     // If Server is online
-    console.log('show');
+    //console.log('show');
     \$configurationMenu.show();
     $('#configSOM').show();
     $('#sidebar-menu > ul >li').each(function(){if(this.id=='')
@@ -73,7 +74,7 @@ $r[]="  function showMainMenu () {
     });
   }
   function hideMainMenu () {
-    console.log('hide');
+    //console.log('hide');
     // If Server is offline
     \$configurationMenu.show();
     $('#configSOM').hide();
@@ -112,6 +113,9 @@ $r[]="  function showMainMenu () {
       alert( 'error' );
     })
   });
+  $('body').on('click', '.bot-test', function () {
+    location.href='/settings/telegramTestMessage';
+  });
   function cbLoadConfig () {";
 $s[]="const \$configurationMenu = $('#configMenu');";
 $r[]="const \$configurationMenu = $('#configMenu,#configSOM');";
@@ -125,9 +129,9 @@ $r[]="if (responseData.processStatus !== false) {
 $s[]="}).fail(function () {";
 $r[]="}).fail(function () {
         hideMainMenu();";
-$s[]="}).always(function () {";
-$r[]="}).always(function () {
-        console.log('A',serverData);";
+
+$s[]="let sumVals";
+$r[]="var sumVals";
 return str_replace($s,$r,$in);
 }
 ?>
